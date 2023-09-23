@@ -1,0 +1,24 @@
+@use 'variables' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: $background-color;
+}
+
+p {
+  color: $text-color;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+}
