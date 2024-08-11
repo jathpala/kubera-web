@@ -20,13 +20,14 @@ const config = {
           '$styles': path.resolve(path.join('src', 'styles'))
         }
     },
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@use '$styles/variables' as *;`
-            }
-        }
-    },
+    // Inject the @use command into every component
+    // css: {
+    //     preprocessorOptions: {
+    //         scss: {
+    //             additionalData: `@use '$styles/variables' as *;`
+    //         }
+    //     }
+    // },
     envPrefix: 'KUBERA'
 }
 

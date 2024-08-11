@@ -17,6 +17,8 @@
 </section>
 
 <style lang="scss">
+@use '$styles/variables' as *;
+
 section {
     display: flex;
     min-height: 100vh;

@@ -92,6 +92,8 @@
 {/each}
 
 <style lang="scss">
+@use '$styles/variables' as *;
+
     header {
         display: flex;
         justify-content: space-between;

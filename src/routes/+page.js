@@ -6,9 +6,9 @@ export async function load({ fetch }) {
     const data = await result.json()
 
     if (data.service !== 'kubera') {
-        throw error(418, {
-            message: "Invalid service"
-        })
+        error(418, {
+                    message: "Invalid service"
+                });
     }
 
     return data
