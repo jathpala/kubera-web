@@ -10,14 +10,14 @@ const config = {
         sveltekit(),
         ViteRestart({
             restart: [
-                'src/styles/*.scss'
+                "src/styles/*.scss"
             ]
         })
     ],
     resolve: {
         alias: {
-          '$': path.resolve('src'),
-          '$styles': path.resolve(path.join('src', 'styles'))
+          "$": path.resolve("src"),
+          "$styles": path.resolve(path.join("src", "styles"))
         }
     },
     // Inject the @use command into every component
@@ -28,7 +28,7 @@ const config = {
     //         }
     //     }
     // },
-    envPrefix: 'KUBERA'
+    envPrefix: "_KUBERA_"
 }
 
 export default config

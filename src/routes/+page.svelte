@@ -1,5 +1,5 @@
 <script>
-    export let data;
+export let data;
 </script>
 
 <svelte:head>
@@ -23,11 +23,10 @@ main {
 
     h1 {
         margin: 0;
-        margin-top: -5rem;     // Prevents heading moving down when bringing next element up
-        margin-bottom: -5rem;  // Brings next element up closer to heading text
         color: $primary-color;
         font-family: 'Baloo Paaji 2', sans-serif;
         font-size: 10rem;
+        line-height: 0.8em;
     }
 
     h2 {
@@ -36,6 +35,7 @@ main {
         font-family: 'Quicksand', sans-serif;
         font-size: 0.7rem;
         font-style: italic;
+        line-height: 0.8em;
     }
 }
 </style>
