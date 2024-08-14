@@ -17,7 +17,7 @@
 </section>
 
 <style lang="scss">
-@use '$styles/variables' as *;
+@use "$styles/theme" as *;
 
 section {
     display: flex;

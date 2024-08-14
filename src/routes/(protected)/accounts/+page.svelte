@@ -1,44 +1,44 @@
 <script>
-    import { invalidateAll } from "$app/navigation";
-    import { page } from "$app/stores";
-    import {
-        Edit3Icon,
-        Trash2Icon,
-        PlusIcon
-    } from "svelte-feather-icons";
+import { invalidateAll } from "$app/navigation";
+import { page } from "$app/stores";
+import {
+    Edit3Icon,
+    Trash2Icon,
+    PlusIcon
+} from "svelte-feather-icons";
 
-    export let data;
+export let data;
 
-    let error
+let error
 
-    async function deleteAccount(event) {
-        let id
-        if (event.target.attributes.href) {
-            // The event was triggered by the <a> element
-            id = event.target.attributes.href.value.split("/").at(-1)
-        } else {
-            // The event was triggered by the <svg> element
-            id = event.target.closest("a").attributes.href.value.split("/").at(-1)
-        }
-
-        const deleteRoute = [import.meta.env["KUBERA_SERVER"], "accounts", id].join("/")
-
-        const result = await fetch(deleteRoute, {
-            method: "DELETE",
-        })
-        switch (result.status) {
-            case 200:
-                // Success
-                // goto(parentRoute, {invalidateAll: true})
-                invalidateAll()
-                break
-            default:
-                // Other error
-                error = "Unable to delete account"
-                console.log(error)
-                break
-        }
+async function deleteAccount(event) {
+    let id
+    if (event.target.attributes.href) {
+        // The event was triggered by the <a> element
+        id = event.target.attributes.href.value.split("/").at(-1)
+    } else {
+        // The event was triggered by the <svg> element
+        id = event.target.closest("a").attributes.href.value.split("/").at(-1)
     }
+
+    const deleteRoute = [import.meta.env["KUBERA_SERVER"], "accounts", id].join("/")
+
+    const result = await fetch(deleteRoute, {
+        method: "DELETE",
+    })
+    switch (result.status) {
+        case 200:
+            // Success
+            // goto(parentRoute, {invalidateAll: true})
+            invalidateAll()
+            break
+        default:
+            // Other error
+            error = "Unable to delete account"
+            console.log(error)
+            break
+    }
+}
 </script>
 
 <svelte:head>
